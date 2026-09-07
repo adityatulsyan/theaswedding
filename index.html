@@ -1503,8 +1503,139 @@
       body.gated .gate-hint {
         display: block;
       }
+      /* Each card carries its own "this is an option, pick one" signal: an empty radio
+         marker plus a pill naming the action — filled and ticked once it is chosen. */
+      .choice {
+        display: flex;
+        flex-direction: column;
+      }
+      .choice-copy {
+        flex: 1 1 auto;
+      }
+      .choice-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        align-self: center;
+        margin-top: 16px;
+        padding: 9px 17px;
+        border: 1px solid var(--maroon);
+        border-radius: 999px;
+        color: var(--maroon);
+        font: 700 11px/1 "DM Sans", sans-serif;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        transition: background 0.2s, color 0.2s, border-color 0.2s;
+      }
+      .choice-mark {
+        width: 13px;
+        height: 13px;
+        flex: 0 0 13px;
+        border: 1.5px solid currentColor;
+        border-radius: 50%;
+        position: relative;
+      }
+      .cta-done {
+        display: none;
+      }
+      .choice:hover .choice-cta {
+        background: var(--maroon);
+        color: #fff7e8;
+      }
+      .choice.active .choice-cta {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--wine);
+      }
+      .choice.active .cta-idle {
+        display: none;
+      }
+      .choice.active .cta-done {
+        display: inline;
+      }
+      .choice.active .choice-mark {
+        background: var(--wine);
+        border-color: var(--wine);
+      }
+      .choice.active .choice-mark:after {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 1px;
+        width: 3px;
+        height: 6.5px;
+        border: solid var(--gold);
+        border-width: 0 1.7px 1.7px 0;
+        transform: rotate(45deg);
+      }
+      /* while a guest stalls, the pill fills and empties so it reads as the next step */
+      body.gated.urging .choice .choice-cta {
+        animation: ctaWake 2.6s ease-in-out infinite;
+      }
+      body.gated.urging .choice:nth-of-type(2) .choice-cta {
+        animation-delay: 0.35s;
+      }
+      @keyframes ctaWake {
+        0%,
+        100% {
+          background: transparent;
+          color: var(--maroon);
+        }
+        50% {
+          background: var(--maroon);
+          color: #fff7e8;
+        }
+      }
+      .gate-hint-main {
+        display: block;
+        font: 600 19px/1.4 "DM Sans", sans-serif;
+        font-style: normal;
+        color: var(--maroon);
+        letter-spacing: 0.01em;
+      }
+      .gate-arrow {
+        display: inline-block;
+        color: var(--saffron);
+      }
       .gate-hint.nudge {
         animation: gateNudge 0.55s ease;
+      }
+      /* If a guest stalls on the picker, escalate rather than let them wander off:
+         the line lifts and the two cards breathe so they read as tappable. */
+      body.gated.urging .gate-hint-main {
+        color: var(--red);
+      }
+      body.gated.urging .gate-arrow {
+        animation: gateArrow 1.9s ease-in-out infinite;
+      }
+      body.gated.urging .choice {
+        animation: choiceBreathe 2.6s ease-in-out infinite;
+      }
+      body.gated.urging .choice:nth-of-type(2) {
+        animation-delay: 0.35s;
+      }
+      @keyframes gateArrow {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(4px);
+          opacity: 0.55;
+        }
+      }
+      @keyframes choiceBreathe {
+        0%,
+        100% {
+          box-shadow: 0 12px 35px rgba(77, 25, 30, 0.08),
+            0 0 0 0 rgba(214, 139, 55, 0);
+        }
+        50% {
+          box-shadow: 0 14px 38px rgba(77, 25, 30, 0.12),
+            0 0 0 7px rgba(214, 139, 55, 0.13);
+        }
       }
       @keyframes gateNudge {
         0%,
@@ -1523,7 +1654,10 @@
       @media (max-width: 700px) {
         .gate-hint {
           font-size: 16px;
-          margin-top: 16px;
+          margin-top: 14px;
+        }
+        .gate-hint-main {
+          font-size: 17px;
         }
       }
       @media (max-width: 700px) {
@@ -1628,6 +1762,9 @@
 
       /* width/height attributes on the <img> tags stop layout shift, but their height would
    otherwise beat the CSS aspect-ratio — height:auto hands the ratio back to the CSS. */
+      .event {
+        scroll-snap-stop: always;
+      }
       .event-art,
       .hero-art {
         height: auto;
@@ -1648,7 +1785,10 @@
           transition-duration: 0.001ms !important;
         }
         .petal,
-        .music-control.pulse {
+        .music-control.pulse,
+        body.gated.urging .choice,
+        body.gated.urging .choice .choice-cta,
+        body.gated.urging .gate-arrow {
           animation: none;
         }
         .confetti {
@@ -1682,23 +1822,21 @@
         padding-top: 6px;
         padding-bottom: 16px;
       }
-      .event .when {
-        min-height: 26px;
-      }
-      .event h3 {
-        min-height: 50px;
-      }
-      .event .quote {
-        min-height: 40px;
-      }
-      .event .desc {
-        min-height: 64px;
-      }
       .event-art {
         aspect-ratio: 4/3;
       }
 
       @media (max-width: 700px) {
+        .event-art {
+          aspect-ratio: 1/1;
+          object-fit: cover;
+        }
+        .event .when,
+        .event h3,
+        .event .quote,
+        .event .desc {
+          min-height: auto;
+        }
         .itinerary {
           padding-top: 18px;
           padding-bottom: 18px;
@@ -1864,6 +2002,10 @@
           ><span class="choice-copy"
             >For the bride's gang — Drolia family, friends &amp; all the
             fabulous people.</span
+          ><span class="choice-cta" aria-hidden="true"
+            ><span class="choice-mark"></span
+            ><span class="cta-idle">Tap to choose</span
+            ><span class="cta-done">Your side</span></span
           >
         </button>
         <button
@@ -1878,11 +2020,17 @@
           ><span class="choice-copy"
             >For the groom's gang — Tulsyan family, friends &amp; the baraat
             brigade.</span
+          ><span class="choice-cta" aria-hidden="true"
+            ><span class="choice-mark"></span
+            ><span class="cta-idle">Tap to choose</span
+            ><span class="cta-done">Your side</span></span
           >
         </button>
       </div>
-      <p id="gateHint" class="gate-hint" aria-live="polite">
-        Pick your team to unlock the rest of the invitation ✦
+      <p id="gateHint" class="gate-hint">
+        <span class="gate-hint-main"
+          >Tap a side to open the invitation <span class="gate-arrow">✦</span></span
+        >
       </p>
       <div id="vibe" class="vibe">
         <div class="kicker">Okay, now be honest…</div>
@@ -1945,7 +2093,7 @@
             <p class="desc">
               Check in, switch off reality &amp; let the celebrations begin.
             </p>
-            <div class="tag">#ShaadiShuruShubhShuru</div>
+            <div class="tag">#SwagatHaiIsJashnMein</div>
           </article>
           <article class="event">
             <img
@@ -2202,6 +2350,12 @@
         }
         cards.forEach((card) => grid.appendChild(card));
       }
+      // A guest who reaches the picker and hesitates is a guest about to close the tab.
+      // Give them a few seconds to read, then make the cards visibly tappable.
+      let urgeTimer = setTimeout(() => {
+        if (document.body.classList.contains("gated"))
+          document.body.classList.add("urging");
+      }, 5000);
       function nudgeGate() {
         if (!document.body.classList.contains("gated")) return;
         if (
@@ -2209,6 +2363,7 @@
           document.documentElement.scrollHeight - 4
         )
           return;
+        document.body.classList.add("urging");
         const hint = document.getElementById("gateHint");
         hint.classList.remove("nudge");
         void hint.offsetWidth;
@@ -2222,7 +2377,8 @@
         el.classList.add("active");
         el.setAttribute("aria-pressed", "true");
         side = el.dataset.side;
-        document.body.classList.remove("gated");
+        clearTimeout(urgeTimer);
+        document.body.classList.remove("gated", "urging");
         arrangeFamilyCards(side);
         document.getElementById("vibe").classList.add("show");
         setTimeout(
