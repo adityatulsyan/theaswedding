@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Aditya ♥ Shreya — The Shaadi</title>
+<meta name="theme-color" content="#651d2b">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Yatra+One&display=swap');
+:root{--maroon:#651d2b;--wine:#3b1019;--red:#a3313e;--saffron:#d68b37;--gold:#d7b25d;--cream:#fff7e8;--paper:#fffaf0;--ink:#301b1d;--muted:#7d625b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:radial-gradient(#7b4b32 .7px,transparent .7px);background-size:13px 13px;z-index:10}
+button,a{font:inherit}.screen{min-height:100svh}
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;color:#fff;
+background:radial-gradient(circle at 50% 30%,#a64a48 0,#661d2c 43%,#300c16 100%)}
+.hero .mandala{position:absolute;width:min(110vw,800px);aspect-ratio:1;border:1px solid rgba(215,178,93,.3);border-radius:50%;box-shadow:0 0 0 35px rgba(215,178,93,.035),0 0 0 70px rgba(215,178,93,.025);transform:rotate(15deg)}
+.hero .mandala:before,.hero .mandala:after{content:"";position:absolute;inset:12%;border:1px dashed rgba(215,178,93,.22);border-radius:50%}
+.hero .mandala:after{inset:27%;border-style:solid}
+.petal{position:absolute;color:#e6bf6a;font-size:24px;opacity:.7;animation:float 7s ease-in-out infinite}
+.p1{top:8%;left:8%}.p2{top:14%;right:10%;animation-delay:1s}.p3{bottom:13%;left:11%;animation-delay:2s}.p4{bottom:8%;right:8%;animation-delay:3s}
+@keyframes float{50%{transform:translateY(-12px) rotate(12deg)}}
+.hero-inner{position:relative;z-index:2;padding:38px 24px;max-width:900px}.hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.12;mix-blend-mode:screen;pointer-events:none}.hero-inner{isolation:isolate}.hero-inner:before{content:'';position:absolute;inset:8% 4%;border:1px solid rgba(215,178,93,.22);border-radius:28px;pointer-events:none;z-index:-1}
+.eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(70px,15vw,155px);line-height:.68;margin:30px 0}
+h1 span{display:block;font-family:'Yatra One',serif;color:#e5bd63;font-size:.36em;line-height:1.6}
+.hero-date{letter-spacing:.14em;font-size:13px;text-transform:uppercase}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:36px;padding:14px 23px;border:1px solid var(--gold);color:#fff5dd;background:rgba(255,255,255,.06);border-radius:999px;text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.section{padding:88px 20px;max-width:1100px;margin:0 auto;scroll-margin-top:12px}.full{max-width:none}.center{text-align:center}.kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:700}h2{font:500 clamp(42px,7vw,76px)/.95 'Cormorant Garamond',serif;color:var(--maroon);margin:15px 0 25px}.lead{width:min(720px,100%);margin:0 auto;color:var(--muted);line-height:1.8;font-size:17px;text-align:center}
+.intro{background:var(--paper);position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center}.intro .lead{max-width:720px}.next-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:30px;padding:12px 22px;border:1px solid var(--maroon);border-radius:999px;background:var(--maroon);color:#fff7e8;text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 24px rgba(59,16,25,.14);transition:transform .2s,box-shadow .2s}.next-btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(59,16,25,.18)}.next-btn:focus-visible,.cta:focus-visible,.gamebtn:focus-visible,.arrow:focus-visible,.music-control:focus-visible,.map:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.intro:after{content:"ॐ";position:absolute;right:5%;bottom:8%;font-family:'Yatra One';font-size:100px;color:rgba(101,29,43,.05)}
+.choice-wrap{background:#f1dfc6;padding:76px 20px;min-height:100svh;display:flex;flex-direction:column;justify-content:center}.choices{max-width:950px;margin:35px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:20px}.choice{border:1px solid #d7b25d;background:var(--paper);padding:34px 24px;cursor:pointer;position:relative;transition:.25s;box-shadow:0 12px 35px rgba(77,25,30,.08);text-align:center}.choice:hover{transform:translateY(-5px)}.choice.active{background:var(--maroon);color:#fff;border-color:var(--gold);transform:translateY(-5px)}.choice .symbol{font-family:'Yatra One';font-size:42px;color:var(--saffron)}.choice h3{font:500 36px 'Cormorant Garamond';margin:9px 0}.choice p{color:var(--muted);font-size:15px;line-height:1.65;margin:0}.choice.active p{color:#f4ddcb}
+.vibe{display:none;margin:25px auto 0;max-width:950px;background:#fffaf0;border:1px solid #dfc38c;padding:26px;text-align:center}.vibe.show{display:block}input[type=range]{width:min(620px,90%);accent-color:var(--red);cursor:pointer}.score{font:500 34px 'Cormorant Garamond';color:var(--maroon);margin:10px}.vibe-msg{min-height:24px;color:var(--muted);font-size:16px;line-height:1.5}
+.itinerary{background:linear-gradient(#fff7e8,#f4dfca);padding-left:0;padding-right:0}.itinerary>.center{padding:0 20px}.event-track-wrap{position:relative;max-width:1200px;margin:38px auto 0}.event-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 20px 30px;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-x;align-items:stretch}.event-track::-webkit-scrollbar{display:none}.event{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start;background:rgba(255,250,240,.98);border:1px solid #e1c68e;border-radius:18px;padding:12px 12px 24px;position:relative;box-shadow:0 18px 45px rgba(62,20,25,.12);overflow:hidden;display:flex;flex-direction:column;min-width:0;text-align:center}.event:before{content:"✦";position:absolute;right:17px;top:13px;color:var(--gold);z-index:2}.event-art{width:100%;aspect-ratio:5/4;object-fit:contain;border-radius:12px;display:block;margin:0 auto 17px;background:linear-gradient(135deg,#f8ecd9,#efe0c7);border:1px solid rgba(170,125,55,.18);padding:0}.event .when{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:700;line-height:1.45;padding:0 5px}.event h3{font:500 32px/1.05 'Cormorant Garamond';margin:9px 5px 8px;color:var(--maroon)}.event .quote{font:600 20px/1.25 'Cormorant Garamond';color:var(--red);margin:3px 5px 10px}.event .desc{font-size:16px;line-height:1.7;color:var(--ink);margin:0 5px 12px}.event .tag{font-size:15px;line-height:1.4;color:#9a7441;font-weight:700;margin:auto 5px 0}.carousel-nav{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:3px}.arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);background:var(--paper);color:var(--maroon);cursor:pointer;font-size:22px;line-height:1}.dots{display:flex;gap:7px}.dot{width:7px;height:7px;border-radius:50%;background:#d9c4a2}.dot.active{background:var(--maroon);transform:scale(1.25)}.swipe-note{font-size:13px;color:var(--muted);text-align:center;margin-top:5px}
+.marriage-game{background:var(--maroon);color:white}.marriage-game h2{color:var(--gold)}.game{max-width:800px;margin:35px auto 0;text-align:center}#reveal{min-height:60px;font:500 27px 'Cormorant Garamond';color:#ffe9bd;margin:20px}.gamebtn{border:1px solid var(--gold);background:transparent;color:white;padding:13px 20px;border-radius:999px;cursor:pointer;margin:5px}.gamebtn:hover{background:rgba(215,178,93,.15)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px;transition:.3s}.gallery img:hover{transform:scale(1.025)}.cari-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:35px}.cari{background:#fffaf0;padding:8px;border:1px solid #dfc38c;box-shadow:0 10px 25px rgba(60,20,20,.08)}.cari img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}.cari:nth-child(1){transform:rotate(-2deg)}.cari:nth-child(2){transform:rotate(1deg);margin-top:15px}.cari:nth-child(3){transform:rotate(-1deg)}.cari:nth-child(4){transform:rotate(2deg);margin-top:18px}
+.venue{background:#f0ddc6}.venue-details{line-height:1.9}.map{display:inline-flex;align-items:center;justify-content:center;margin-top:22px;padding:13px 20px;border-radius:999px;background:var(--maroon);color:#fff;text-decoration:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.share{background:var(--paper);text-align:center}.sharebox{width:min(650px,100%);margin:30px auto;background:#fff;border:1px solid #dfc38c;padding:28px}.sharebox button{background:var(--red);color:white;border:0;padding:14px 22px;border-radius:999px;cursor:pointer}.status{font-size:14px;color:var(--muted);margin-top:12px;min-height:20px;line-height:1.5}footer{background:var(--wine);color:#ead5b3;text-align:center;padding:35px 20px;font-size:11px;letter-spacing:.13em}.om{font-family:'Yatra One';font-size:25px;color:var(--gold);display:block;margin-bottom:8px}.confetti{position:fixed;z-index:99;pointer-events:none;top:-15px;font-size:18px;animation:fall 2.2s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+.music-control{position:fixed;right:14px;bottom:14px;z-index:50;border:1px solid rgba(215,178,93,.8);background:rgba(59,16,25,.95);color:#fff2d0;border-radius:999px;padding:11px 15px;box-shadow:0 8px 25px rgba(0,0,0,.18);cursor:pointer;font-size:12px;max-width:calc(100vw - 28px);white-space:nowrap}.music-control.playing{box-shadow:0 0 0 4px rgba(215,178,93,.12),0 8px 25px rgba(0,0,0,.18)}
+@media(max-width:900px){.event{flex-basis:calc(100vw - 48px)}.gallery{grid-template-columns:repeat(3,1fr)}.cari-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){html,body{width:100%;max-width:100%;overflow-x:hidden}.hero{min-height:100svh}.hero-art{opacity:.10}.hero-inner:before{inset:5% 3%;border-radius:22px}.section{padding-left:16px;padding-right:16px}.center{width:100%;margin-left:auto;margin-right:auto}.lead{font-size:16px;line-height:1.75}.event-track{padding-left:16px;padding-right:16px}.event{flex-basis:calc(100vw - 32px);width:calc(100vw - 32px)}.hero-inner,.section,.choice-wrap{width:100%;max-width:100%;}.hero-inner{text-align:center}.event-track-wrap{width:100%;overflow:hidden}.event-track{width:100%;}.event{box-shadow:0 12px 30px rgba(62,20,25,.12)}.screen{min-height:100svh}.hero-inner{padding:30px 18px}.hero-date{font-size:11px;line-height:1.7}.cta{margin-top:28px}.section{padding:68px 16px}.intro{min-height:100svh;padding-top:80px;padding-bottom:80px}.choice-wrap{min-height:100svh}.lead{font-size:16px;line-height:1.75}.choices{grid-template-columns:1fr;gap:14px}.choice{padding:28px 20px}.choice h3{font-size:34px}.choice p{font-size:15px}.vibe{padding:22px 15px}.vibe h3{font-size:31px!important}.itinerary>.center{padding:0 16px}.event-track-wrap{margin-top:28px}.event-track{padding:8px 16px 26px;gap:12px}.event{flex:0 0 calc(100vw - 32px);width:calc(100vw - 32px);padding:10px 10px 24px;border-radius:16px;scroll-snap-align:center}.event-art{aspect-ratio:5/4;margin-bottom:15px;object-fit:contain}.event .when{font-size:11px}.event h3{font-size:31px;line-height:1.02}.event .quote{font-size:20px}.event .desc{font-size:16px;line-height:1.7}.event .tag{font-size:14px}.swipe-note{display:block}.carousel-nav{margin-top:0}.gallery{grid-template-columns:repeat(2,1fr)}.cari-grid{grid-template-columns:repeat(2,1fr);gap:10px}.cari:nth-child(2),.cari:nth-child(4){margin-top:8px}.music-control{right:10px;bottom:10px;padding:10px 13px;font-size:11px}.map{font-size:11px}.sharebox{padding:24px 18px}.sharebox button{max-width:100%;font-size:13px}h1{font-size:clamp(64px,22vw,105px)}}
+@media(min-width:701px){.swipe-note{display:none}}
+/* Refined visual layer */
+:root{--gold-light:#f1d99b;--line:rgba(151,103,49,.25)}
+.hero{background:radial-gradient(circle at 50% 22%,#a95050 0,#741f31 39%,#310b16 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,4,12,.35),transparent 28%,transparent 72%,rgba(34,4,12,.35)),linear-gradient(0deg,rgba(28,4,10,.4),transparent 30%);pointer-events:none}
+.hero-inner{padding:58px 46px}.hero-inner:before{inset:0;border-color:rgba(241,217,155,.4);border-radius:2px;box-shadow:inset 0 0 0 7px rgba(241,217,155,.055)}
+.eyebrow{color:var(--gold-light)}h1{margin:34px 0 31px;text-shadow:0 8px 26px rgba(33,3,12,.32)}
+.cta{background:rgba(255,255,255,.07);transition:.25s}.cta:hover{background:var(--gold);color:var(--wine);transform:translateY(-2px)}
+.section{padding-top:100px;padding-bottom:100px}.choice-wrap{background:linear-gradient(135deg,#eed8b9,#f6e7d0);padding-top:100px;padding-bottom:100px}.choices{margin-top:38px}.choice{border-color:var(--line);border-radius:16px;padding:38px 28px;overflow:hidden}.choice:after{content:"";position:absolute;width:120px;height:120px;border:1px solid rgba(215,178,93,.24);border-radius:50%;top:-74px;right:-48px}.choice:hover{box-shadow:0 19px 38px rgba(77,25,30,.13)}
+.event{border-radius:20px}.event-art{width:calc(100% + 12px);margin-left:-6px;margin-right:-6px;border-radius:13px;margin-bottom:19px}.arrow,.dot,.map,.sharebox button{transition:.2s}.arrow:hover{background:var(--maroon);color:#fff}.map{box-shadow:0 9px 20px rgba(59,16,25,.14)}.map:hover{transform:translateY(-2px)}.sharebox{margin-top:34px;border-radius:16px;padding:32px;box-shadow:0 16px 36px rgba(60,20,20,.07)}.sharebox button{box-shadow:0 8px 18px rgba(163,49,62,.2)}.sharebox button:hover{transform:translateY(-2px);background:var(--maroon)}
+@media(max-width:700px){.hero-inner{padding:42px 24px}.hero-inner:before{inset:0;border-radius:16px}.section{padding-top:76px;padding-bottom:76px}.choice-wrap{padding:76px 16px}}
+/* Keep the itinerary carousel within the mobile viewport. */
+.itinerary{overflow:hidden}.event-track-wrap{max-width:100%;overflow:hidden}.event-track{max-width:100%}
+@media(max-width:700px){.itinerary{padding-left:0;padding-right:0}.event-track{padding-left:16px;padding-right:16px}.event{flex-basis:100%;width:100%;min-width:100%}}
+/* Consistent alignment and spacing system */
+.section,.choice-wrap{isolation:isolate}.center{margin-left:auto;margin-right:auto}.kicker{margin-bottom:2px}h2{max-width:900px;margin-left:auto;margin-right:auto}.lead{max-width:720px}
+.intro{padding-left:24px;padding-right:24px}.intro h2,.choice-wrap h2,.itinerary h2,.marriage-game h2,.venue h2,.share h2{margin-top:14px;margin-bottom:22px}
+.choice-wrap>.center{max-width:720px}.choices{width:min(950px,100%)}.choice h3{line-height:1.05}.vibe{width:min(950px,100%);border-radius:14px}.vibe h3{line-height:1.1}.score{line-height:1}
+.itinerary>.center{max-width:760px;margin-left:auto;margin-right:auto}.event-track-wrap{margin-left:auto;margin-right:auto}.event-track{align-items:stretch;touch-action:pan-x pan-y}.event{height:auto}.event .when{min-height:32px;display:grid;place-items:center}.event h3{min-height:67px;display:grid;place-items:center}.event .quote{min-height:50px;display:grid;place-items:center}.event .desc{min-height:82px}.event .tag{margin:6px 5px 0;padding-top:4px}
+.marriage-game .center{max-width:720px}.game{padding:0 4px}.gamebtn{min-height:46px}.venue .center{max-width:720px}.venue-details{margin-top:0}.share{padding-left:20px;padding-right:20px}.sharebox{display:flex;flex-direction:column;align-items:center;gap:18px}.sharebox .lead{margin:0}.sharebox .status{margin-top:0}
+@media(max-width:700px){.section{padding-left:16px;padding-right:16px}.intro{padding-left:24px;padding-right:24px}.choice-wrap{padding:52px 16px;min-height:auto}.choices{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:24px;gap:10px}.choice{min-height:198px;padding:18px 10px;display:flex;flex-direction:column;justify-content:center}.choice .symbol{font-size:31px}.choice h3{font-size:27px;line-height:.95;margin:7px 0}.choice p{font-size:13px;line-height:1.45}.annie-note{font-size:15px;margin:0 0 9px}.vibe{margin-top:20px}.itinerary>.center{padding-left:16px;padding-right:16px}.event-track-wrap{margin-top:24px}.event-track{padding-left:28px;padding-right:28px}.event .when{min-height:auto}.event h3{min-height:auto}.event .quote{min-height:auto}.event .desc{min-height:auto}.event .tag{margin-top:6px}.carousel-nav{padding:0 16px}.marriage-game{padding-left:16px;padding-right:16px}.game{margin-top:28px}.gamebtn{width:100%;margin:5px 0}.venue{padding-left:24px;padding-right:24px}.share{padding-left:16px;padding-right:16px}.sharebox{width:100%;gap:16px}}
+.countdown{margin-top:14px;color:#fff2cf;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.countdown strong{font:500 26px/1 'Cormorant Garamond';color:var(--gold-light);letter-spacing:0;margin-right:3px}.section-divider{height:1px;position:relative;z-index:2;display:grid;place-items:center;background:linear-gradient(90deg,transparent 6%,rgba(215,178,93,.48) 28%,rgba(215,178,93,.48) 72%,transparent 94%)}.section-divider span{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(215,178,93,.55);border-radius:50%;background:var(--paper);color:var(--saffron);font-size:16px;box-shadow:0 0 0 5px var(--paper)}.dark-divider span{background:var(--maroon);box-shadow:0 0 0 5px var(--maroon);color:var(--gold)}
+.annie-note{margin:-3px 0 11px;color:var(--saffron);font:italic 17px/1 'Cormorant Garamond',serif;letter-spacing:.04em}
+.venue-card{width:min(590px,100%);margin:30px auto 0;padding:26px;background:rgba(255,250,240,.82);border:1px solid var(--line);border-radius:18px;box-shadow:0 14px 35px rgba(77,25,30,.08);text-align:left}.venue-place{display:flex;align-items:center;gap:14px;color:var(--muted);line-height:1.55}.venue-place strong{font:600 26px/1 'Cormorant Garamond';color:var(--maroon)}.venue-location{font-size:15px;font-weight:700;color:var(--red)}.venue-place small{font-size:13px}.venue-icon{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;border-radius:50%;background:var(--maroon);color:var(--gold-light);font-size:22px}.travel-notes{margin:22px 0 8px;padding:19px 0 5px;border-top:1px solid var(--line);display:grid;gap:10px}.travel-label{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:3px}.travel-notes div{display:flex;justify-content:space-between;gap:16px;padding:12px 13px;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;background:rgba(215,178,93,.1);font-size:14px;color:var(--muted)}.travel-notes b{color:var(--maroon);font-weight:700}.travel-notes div span{text-align:right;font-weight:600}.venue-card .map{margin-top:16px;width:100%}
+.family-details{background:linear-gradient(145deg,#fffaf0,#f4dfca);max-width:none}.family-details>.center{max-width:760px}.family-grid{width:min(900px,100%);margin:38px auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.family-card{padding:28px;background:rgba(255,255,255,.62);border:1px solid var(--line);border-radius:17px;box-shadow:0 12px 28px rgba(77,25,30,.07);text-align:center}.family-side{font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--red)}.family-card h3{font:500 34px/1 'Cormorant Garamond';color:var(--maroon);margin:10px 0 23px}.family-line{padding:15px 0;border-top:1px solid var(--line);display:grid;gap:5px}.family-line span{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:700}.family-line strong{font:500 18px/1.45 'Cormorant Garamond';color:var(--ink)}
+@media(max-width:700px){.countdown{margin-top:13px}.venue-card{margin-top:26px;padding:22px 18px}.travel-notes div{display:grid;gap:3px}.travel-notes div span{text-align:left}.family-grid{grid-template-columns:1fr;margin-top:30px;gap:14px}.family-card{padding:25px 20px}.family-card h3{font-size:31px;margin:9px 0 19px}.family-line{padding:14px 0}.family-line strong{font-size:18px;line-height:1.4;letter-spacing:0;white-space:normal}.section-divider span{width:34px;height:34px}}
+/* Keep the complete itinerary carousel in a standard mobile viewport. */
+/* Gate: until a side is picked, everything after the picker is removed from layout, so the page simply ends at the choices and there is nothing to scroll to. */
+body.gated #choose~*:not(.confetti){display:none}
+.gate-hint{display:none;margin:20px auto 0;max-width:420px;text-align:center;font:italic 18px/1.45 'Cormorant Garamond',serif;color:var(--red);letter-spacing:.03em}
+body.gated .gate-hint{display:block}
+.gate-hint.nudge{animation:gateNudge .55s ease}
+@keyframes gateNudge{0%,100%{transform:translateY(0);opacity:1}30%{transform:translateY(-7px);opacity:.72}65%{transform:translateY(4px)}}
+@media(max-width:700px){.gate-hint{font-size:16px;margin-top:16px}}
+@media(max-width:700px){.itinerary{padding-top:48px;padding-bottom:42px}.itinerary h2{font-size:42px;margin-bottom:13px}.itinerary .lead{font-size:14px;line-height:1.5}.event-track-wrap{margin-top:16px}.event-track{padding-top:4px;padding-bottom:14px}.event{padding:8px 8px 14px}.event-art{width:calc(100% + 16px);margin-left:-8px;margin-right:-8px;aspect-ratio:5/4;margin-bottom:12px}.event .when{font-size:10px}.event h3{font-size:27px;margin:6px 4px}.event .quote{font-size:18px;margin:1px 4px 6px}.event .desc{font-size:14px;line-height:1.45;margin:0 4px 7px}.event .tag{font-size:12px;margin:3px 4px 0}.carousel-nav{margin-top:0}.swipe-note{margin-top:2px;font-size:12px}}
+</style>
+</head>
+<body>
+<audio id="bgMusic" preload="auto" loop playsinline autoplay><source src="jashn-e-bahaaraa-instrumental.mp3" type="audio/mpeg"></audio>
+<button id="musicControl" class="music-control" type="button" aria-label="Play wedding music">♫ <span id="musicLabel">Play music</span></button>
+
+<header class="hero screen">
+ <img class="hero-art" src="hero-invitation.png" alt=""><div class="mandala"></div><div class="petal p1">❈</div><div class="petal p2">✦</div><div class="petal p3">❈</div><div class="petal p4">✦</div>
+ <div class="hero-inner">
+  <div class="eyebrow">शुभ विवाह · An invitation to celebrate</div>
+  <h1 aria-label="Aditya and Shreya"><span class="name">Aditya</span><span class="heart" aria-hidden="true">♥</span><span class="name">Shreya</span></h1>
+  <div class="hero-date">29 · 30 November 2026 &nbsp;|&nbsp; Dhanbad</div>
+  <div id="countdown" class="countdown" aria-live="polite"><strong>—</strong> days to go</div>
+  <a class="cta" href="#big-news">Enter the Shaadi ✦</a>
+ </div>
+</header>
+
+<section class="section intro center" id="big-news">
+ <div class="kicker">The big news</div><h2>Hum dono ki shaadi hai!</h2>
+ <p class="lead">And because a shaadi without our favourite people is just a rehearsal, this little corner of the internet is officially your invitation. Pick your side, tell us your excitement level, and then come ready for two days of full-on celebration.</p>
+ <a class="next-btn" href="#choose">Okay, tell me more ↓</a>
+</section>
+
+<div class="section-divider" aria-hidden="true"><span>❈</span></div>
+<section id="choose" class="choice-wrap full">
+ <div class="center"><div class="kicker">First things first</div><h2>Which team are you on?</h2><p class="lead">Choose your side. We promise no family politics… yet. 😄</p></div>
+ <div class="choices">
+  <div class="choice" data-side="Bride's Side" onclick="chooseSide(this)"><div class="symbol">❀</div><h3>Team Shreya</h3><div class="annie-note">Annie’s inner circle ✦</div><p>For the bride's gang — Drolia family, friends &amp; all the fabulous people.</p></div>
+  <div class="choice" data-side="Groom's Side" onclick="chooseSide(this)"><div class="symbol">✦</div><h3>Team Aditya</h3><p>For the groom's gang — Tulsyan family, friends &amp; the baraat brigade.</p></div>
+ </div>
+ <p id="gateHint" class="gate-hint" aria-live="polite">Pick your team to unlock the rest of the invitation ✦</p>
+ <div id="vibe" class="vibe">
+   <div class="kicker">Okay, now be honest…</div><h3 style="font:500 35px 'Cormorant Garamond';color:#651d2b;margin:8px">How excited are you?</h3>
+   <input id="excitement" type="range" min="1" max="100" value="92" oninput="updateVibe(this.value)">
+   <div class="score"><span id="score">92</span>%</div><div id="vibeMsg" class="vibe-msg">Already mentally at the sangeet. 💃</div>
+   <button class="gamebtn" style="background:#651d2b" onclick="saveVibe()">Lock it in ✦</button>
+   <div id="lockHint" class="status" aria-live="polite"></div>
+ </div>
+</section>
+
+<div class="section-divider" aria-hidden="true"><span>✦</span></div>
+
+<section class="section itinerary full" id="itinerary">
+ <div class="center"><div class="kicker">The shaadi itinerary</div><h2>Do din. Full masti.</h2><p class="lead">Swipe through the celebrations — one card at a time on your phone.</p></div>
+ <div class="event-track-wrap">
+  <div class="event-track" id="eventTrack">
+   <article class="event">
+    <img class="event-art" src="event-entry.jpg" alt="Caricature of Aditya and Shreya arriving at the resort">
+    <div class="when">29 Nov | 11:00 AM onwards</div><h3>Entry to the Resort</h3>
+    <div class="quote">“Welcome to the shaadi universe!”</div>
+    <p class="desc">Check in, switch off reality &amp; let the celebrations begin.</p>
+    <div class="tag">#ShaadiShuruShubhShuru</div>
+   </article>
+   <article class="event">
+    <img class="event-art" src="event-mayra.jpg" alt="Caricature for the Mayra celebration">
+    <div class="when">29 Nov | 1:00 PM</div><h3>Mayra</h3>
+    <div class="quote">“Riwaaz bhi, raunak bhi!”</div>
+    <p class="desc">An afternoon of blessings, love, laughter &amp; family traditions.</p>
+    <div class="tag">#MayraWaliMohabbat</div>
+   </article>
+   <article class="event">
+    <img class="event-art" src="event-sangeet.jpg" alt="Caricature of Aditya and Shreya at Bollywood Night and Sangeet">
+    <div class="when">29 Nov | 7:00 PM onwards</div><h3>Bollywood Night &amp; Sangeet</h3>
+    <div class="quote">“Lights. Camera. Dance!”</div>
+    <p class="desc">Filmy beats, dramatic performances &amp; absolutely zero sitting down.</p>
+    <div class="tag">#NachoFilmyStyle</div>
+   </article>
+   <article class="event">
+    <img class="event-art" src="event-haldi.jpg" alt="Caricature of Aditya and Shreya at Haldi and Carnival">
+    <div class="when">30 Nov | 11:00 AM</div><h3>Haldi &amp; Carnival</h3>
+    <div class="quote">“Warning: Things are about to get yellow!”</div>
+    <p class="desc">Haldi, colours, games &amp; carnival chaos — come ready to get messy.</p>
+    <div class="tag">#RangBarseShaadiWale</div>
+   </article>
+   <article class="event">
+    <img class="event-art" src="event-baraat.jpg" alt="Caricature for Korath and Baraat">
+    <div class="when">30 Nov | 6:00 PM</div><h3>Korath &amp; Baraat</h3>
+    <div class="quote">“Dhol bajega. Dulha niklega. Hungama hoga!”</div>
+    <p class="desc">The ultimate procession to the biggest ‘I do’ of the weekend.</p>
+    <div class="tag">#BarathisOnTheMove</div>
+   </article>
+   <article class="event">
+    <img class="event-art" src="event-reception.jpg" alt="Caricature of Aditya and Shreya at the reception">
+    <div class="when">30 Nov | 8:00 PM onwards</div><h3>Reception</h3>
+    <div class="quote">“The beginning of forever deserves a party.”</div>
+    <p class="desc">Good food, great music &amp; one very happily married couple.</p>
+    <div class="tag">#AndTheyDancedEverAfter</div>
+   </article>
+  </div>
+  <div class="carousel-nav">
+   <button class="arrow" id="prevEvent" aria-label="Previous event">‹</button>
+   <div class="dots" id="eventDots"></div>
+   <button class="arrow" id="nextEvent" aria-label="Next event">›</button>
+  </div>
+  <div class="swipe-note">← Swipe to explore the shaadi →</div>
+ </div>
+</section>
+
+<div class="section-divider" aria-hidden="true"><span>❈</span></div>
+<section class="section marriage-game">
+ <div class="center"><div class="kicker" style="color:#e4bd68">One very important question</div><h2>How well do you know us?</h2></div>
+ <div class="game">
+   <div id="reveal">Ready for a mini shaadi quiz?</div>
+   <button class="gamebtn" onclick="quiz('who')">Who fell first? 👀</button>
+   <button class="gamebtn" onclick="quiz('dance')">Who will dance more?</button>
+   <button class="gamebtn" onclick="quiz('late')">Who will be late?</button>
+   <button class="gamebtn" onclick="quiz('food')">Who is here for the food?</button>
+ </div>
+</section>
+
+<div class="section-divider dark-divider" aria-hidden="true"><span>✦</span></div>
+
+<section class="section venue full">
+ <div class="center"><div class="kicker">Where the magic happens</div>
+ <div class="venue-card">
+  <div class="venue-place"><span class="venue-icon">⌖</span><div><strong>Parklane Resort</strong><br><span class="venue-location">Dhanbad, Jharkhand</span><br><small>Your shaadi stay for the weekend</small></div></div>
+  <div class="travel-notes"><span class="travel-label">Travel notes</span><div><b>Nearest airports</b><span>Durgapur &amp; Deoghar</span></div><div><b>Nearest railway station</b><span>Dhanbad (DHN)</span></div></div>
+  <a class="map" target="_blank" href="https://maps.app.goo.gl/279pS2ApKUdRraieA">Open the map ↗</a>
+ </div></div>
+</section>
+
+<div class="section-divider" aria-hidden="true"><span>✦</span></div>
+<section class="section family-details">
+ <div class="center"><div class="kicker">With love from our families</div><h2>You’re warmly invited</h2>
+ <p class="lead">The Tulsyan and Drolia families invite you to celebrate the beginning of Aditya &amp; Shreya’s forever.</p></div>
+ <div class="family-grid">
+  <article class="family-card" data-family="groom"><div class="family-side">Groom’s family</div><h3>Tulsyan Family</h3><div class="family-line"><span>Parents</span><strong>Seema &amp; Anil Kumar Tulsyan</strong></div><div class="family-line"><span>Grandparents</span><strong>Late Geeta Devi Tulsyan<br>Late Chaturbhuj Tulsyan</strong></div><div class="family-line"><span>Maternal Grandparents</span><strong>Late Bimla Devi Agarwal<br>Late Mahabir Prasad Agarwal</strong></div></article>
+  <article class="family-card" data-family="bride"><div class="family-side">Bride’s family</div><h3>Drolia Family</h3><div class="family-line"><span>Parents</span><strong>Babita &amp; Sanjeev Kumar Drolia</strong></div><div class="family-line"><span>Grandparents</span><strong>Late Bhagirathi Devi Drolia<br>Late Shyam Sunder Drolia</strong></div><div class="family-line"><span>Maternal Grandparents</span><strong>Late Chandrakala Devi<br>Late Vijay Poddar</strong></div></article>
+ </div>
+</section>
+
+<div class="section-divider" aria-hidden="true"><span>❈</span></div>
+<section class="section share">
+ <div class="kicker">You've picked your side</div><h2>Now make it official.</h2>
+ <div class="sharebox">
+   <p id="shareText" class="lead">Choose Team Shreya or Team Aditya above, set your excitement level, and send your wedding vibe to the couple.</p>
+   <button onclick="shareVibe()">Send my vibe on WhatsApp ♥</button>
+   <div id="status" class="status"></div>
+ </div>
+</section>
+
+<footer><span class="om">ॐ</span>Aditya ♥ Shreya · 29 &amp; 30 November 2026 · Dhanbad</footer>
+
+<script>
+let side="";
+const msgs={1:"I am pretending to be calm.",25:"Okay… mildly excited. 😌",50:"This is getting serious!",70:"Outfit planning has begun. ✨",85:"Already mentally at the sangeet. 💃",95:"BARAAT WHEN?! 🥁",100:"I HAVE CANCELLED EVERYTHING ELSE. SHAADI TIME. 🔥"};
+function arrangeFamilyCards(selection=""){
+ const grid=document.querySelector('.family-grid');if(!grid)return;
+ const cards=[...grid.children];
+ if(selection){
+  const first=selection==="Groom's Side"?'groom':'bride';
+  cards.sort((a,b)=>(a.dataset.family===first?-1:1));
+ }else if(Math.random()>=.5){cards.reverse()}
+ cards.forEach(card=>grid.appendChild(card));
+}
+function nudgeGate(){
+ if(!document.body.classList.contains('gated'))return;
+ if(window.innerHeight+window.scrollY < document.documentElement.scrollHeight-4)return;
+ const hint=document.getElementById('gateHint');
+ hint.classList.remove('nudge');void hint.offsetWidth;hint.classList.add('nudge');
+}
+function chooseSide(el){
+ document.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));el.classList.add('active');side=el.dataset.side;
+ document.body.classList.remove('gated');
+ arrangeFamilyCards(side);
+ document.getElementById('vibe').classList.add('show');
+ setTimeout(()=>document.getElementById('vibe').scrollIntoView({behavior:'smooth',block:'center'}),80);
+ document.getElementById('shareText').textContent="You're "+side+"! Now set your excitement level and send your wedding vibe.";
+ burst();
+}
+function updateVibe(v){
+ document.getElementById('score').textContent=v;
+ let key=Object.keys(msgs).reverse().find(k=>v>=Number(k));document.getElementById('vibeMsg').textContent=msgs[key];
+}
+function saveVibe(){
+ if(!side){document.getElementById('lockHint').textContent="Pick Team Shreya or Team Aditya first!";return}
+ localStorage.setItem('weddingSide',side);localStorage.setItem('weddingExcitement',document.getElementById('excitement').value);
+ document.getElementById('status').textContent="Saved! Your side + excitement are remembered on this device. ♥";
+ document.getElementById('lockHint').textContent="Locked in! Taking you to the shaadi itinerary… ✦";
+ burst();
+ setTimeout(()=>document.querySelector('.event').scrollIntoView({behavior:'smooth',block:'center',inline:'center'}),450);
+}
+function shareVibe(){
+ if(!side){document.getElementById('status').textContent="Pick a side first — Team Shreya or Team Aditya!";return}
+ const v=document.getElementById('excitement').value;
+ const text=`I'm ${side} for Aditya & Shreya! 💍 My wedding excitement level: ${v}%. See you in Dhanbad on 29–30 November! 🥁✨`;
+ const url='https://api.whatsapp.com/send?text='+encodeURIComponent(text);
+ window.location.assign(url);
+}
+function quiz(type){
+ const a={who:"Aditya says Shreya. Shreya says Aditya. We'll let you decide. 😏",dance:"Shreya has the Bollywood energy. Aditya has the baraat confidence. Place your bets. 🕺💃",late:"We are not naming names. The wedding is in Dhanbad — just arrive before the baraat. 😂",food:"Whoever says 'I'm not hungry' first is definitely lying. 🍛"};
+ document.getElementById('reveal').textContent=a[type];burst();
+}
+function burst(){
+ for(let i=0;i<22;i++){const e=document.createElement('div');e.className='confetti';e.textContent=['✦','❈','♥','•'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.animationDelay=Math.random()*.4+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),2500)}
+}
+const v=localStorage.getItem('weddingExcitement');document.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));document.body.classList.add('gated');
+window.addEventListener('wheel',nudgeGate,{passive:true});window.addEventListener('touchmove',nudgeGate,{passive:true});window.addEventListener('keydown',e=>{if(['ArrowDown','PageDown','End',' '].includes(e.key))nudgeGate()});
+if(v){document.getElementById('excitement').value=v;updateVibe(v)}arrangeFamilyCards(side);
+
+function updateCountdown(){
+ const target=new Date('2026-11-29T00:00:00+05:30'),now=new Date();
+ const days=Math.max(0,Math.ceil((target-now)/86400000));
+ document.getElementById('countdown').innerHTML=`<strong>${days}</strong> ${days===1?'day':'days'} to go`;
+}
+updateCountdown();
+
+const music=document.getElementById('bgMusic'),musicBtn=document.getElementById('musicControl'),musicLabel=document.getElementById('musicLabel');
+const musicStartAt=2;
+function skipMusicIntro(){if(Number.isFinite(music.duration)&&music.currentTime<musicStartAt)music.currentTime=musicStartAt;}
+music.addEventListener('loadedmetadata',skipMusicIntro,{once:true});
+function startMusic(){
+ music.volume=.35;
+ skipMusicIntro();
+ music.play().then(()=>{musicBtn.classList.add('playing');musicLabel.textContent='Music on ♫';}).catch(()=>{});
+}
+window.addEventListener('load',startMusic,{once:true});
+musicBtn.addEventListener('click',()=>{if(music.paused){startMusic()}else{music.pause();musicBtn.classList.remove('playing');musicLabel.textContent='Play music';}});
+
+const track=document.getElementById('eventTrack'),cards=[...document.querySelectorAll('.event')],dots=document.getElementById('eventDots');
+let current=0;
+cards.forEach((_,i)=>{const d=document.createElement('span');d.className='dot'+(i===0?' active':'');dots.appendChild(d);});
+function setCurrent(i){
+ current=Math.max(0,Math.min(cards.length-1,i));
+ cards[current].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});
+ [...dots.children].forEach((d,j)=>d.classList.toggle('active',j===current));
+}
+document.getElementById('prevEvent').onclick=()=>setCurrent(current-1);
+document.getElementById('nextEvent').onclick=()=>setCurrent(current+1);
+let scrollTimer;
+track.addEventListener('scroll',()=>{
+ clearTimeout(scrollTimer);
+ scrollTimer=setTimeout(()=>{
+  const left=track.scrollLeft;let best=0,bestDist=Infinity;
+  cards.forEach((c,i)=>{const dist=Math.abs(c.offsetLeft-left-track.offsetLeft);if(dist<bestDist){bestDist=dist;best=i}});
+  current=best;[...dots.children].forEach((d,j)=>d.classList.toggle('active',j===current));
+ },80);
+},{passive:true});
+
+</script>
+</body></html>
