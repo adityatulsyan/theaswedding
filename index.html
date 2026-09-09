@@ -38,7 +38,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Aditya ♥ Shreya" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Yatra+One&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&family=Yatra+One&display=swap");
       :root {
         --maroon: #651d2b;
         --wine: #3b1019;
@@ -1830,7 +1830,7 @@
 
       @media (max-width: 700px) {
         .event-art {
-          aspect-ratio: 1/1;
+          aspect-ratio: 6/5;
           object-fit: cover;
         }
         .event .when,
@@ -1840,8 +1840,8 @@
           min-height: auto;
         }
         .itinerary {
-          padding-top: 18px;
-          padding-bottom: 18px;
+          padding-top: 10px;
+          padding-bottom: 10px;
         }
         .itinerary > .center .lead {
           display: none;
@@ -1891,8 +1891,8 @@
       }
       @media (min-width: 701px) {
         .itinerary {
-          padding-top: 24px;
-          padding-bottom: 24px;
+          padding-top: 16px;
+          padding-bottom: 16px;
         }
         .itinerary h2 {
           font: 500 clamp(38px, 4.4vw, 56px) / 1 "Cormorant Garamond", serif;
@@ -1971,6 +1971,85 @@
           padding: 15px 26px;
         }
       }
+      /* Ganesh vandana. Devanagari needs its own webfont (DM Sans/Cormorant have no
+         Devanagari glyphs), no letter-spacing (it severs the shirorekha) and extra
+         line-height, because matras sit above and below the baseline. */
+      .invocation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 11px;
+        margin-bottom: 20px;
+        color: #e5bd63;
+      }
+      .ganesh {
+        width: 78px;
+        height: auto;
+        opacity: 0.95;
+        filter: drop-shadow(0 3px 10px rgba(20, 2, 8, 0.45));
+      }
+      /* the eyebrow's Devanagari had no webfont and inherited .25em letter-spacing,
+         which breaks the shirorekha — now it matches the shlok */
+      .eyebrow [lang="hi"] {
+        font-family: "Tiro Devanagari Hindi", "Noto Serif Devanagari", serif;
+        letter-spacing: normal;
+        font-size: 1.2em;
+      }
+      .shlok {
+        margin: 0;
+        max-width: min(440px, 94%);
+        font-family: "Tiro Devanagari Hindi", "Noto Serif Devanagari", serif;
+        font-size: 15px;
+        line-height: 2;
+        letter-spacing: normal;
+        text-transform: none;
+        color: #f0d49a;
+        text-align: center;
+      }
+      @media (max-width: 700px) {
+        .invocation {
+          gap: 8px;
+          margin-bottom: 14px;
+        }
+        .ganesh {
+          width: 64px;
+          height: auto;
+        }
+        .shlok {
+          font-size: 13px;
+          line-height: 1.95;
+        }
+      }
+      /* Dress code per function — the one thing every guest messages to ask about. */
+      .dress {
+        margin: 7px 5px 0;
+        padding-top: 8px;
+        border-top: 1px solid rgba(215, 178, 93, 0.45);
+      }
+      .dress-label {
+        display: block;
+        font-size: 9.5px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 700;
+      }
+      .dress-text {
+        display: block;
+        margin-top: 3px;
+        font: 500 15px/1.35 "Cormorant Garamond", serif;
+        color: var(--ink);
+      }
+      @media (max-width: 700px) {
+        .dress {
+          margin-top: 6px;
+          padding-top: 6px;
+        }
+        .dress-text {
+          font-size: 14.5px;
+          line-height: 1.3;
+        }
+      }
 </style>
   </head>
   <body>
@@ -2001,6 +2080,53 @@
       <div class="petal p3">❈</div>
       <div class="petal p4">✦</div>
       <div class="hero-inner">
+        <div class="invocation">
+          <svg
+            class="ganesh"
+            viewBox="0 0 200 210"
+            role="img"
+            aria-label="Shree Ganesha"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <!-- finial flame + bindu -->
+            <path d="M100 14 C92 23 94 32 100 36 C106 32 108 23 100 14Z" stroke-width="2.4" />
+            <circle cx="100" cy="44" r="3.8" fill="currentColor" stroke="none" />
+            <!-- mukut -->
+            <path d="M66 76 C66 58 81 50 100 50 C119 50 134 58 134 76" stroke-width="3.2" />
+            <path d="M66 76 C78 71 122 71 134 76" stroke-width="2" />
+            <!-- face -->
+            <path d="M68 78 C68 106 81 121 100 121 C119 121 132 106 132 78" stroke-width="3.2" />
+            <!-- ears -->
+            <path d="M69 82 C50 65 30 74 30 94 C30 113 46 125 61 120 C68 118 71 110 69 104" stroke-width="3.2" />
+            <path d="M131 82 C150 65 170 74 170 94 C170 113 154 125 139 120 C132 118 129 110 131 104" stroke-width="3.2" />
+            <!-- closed, meditative eyes -->
+            <path d="M78 93 Q87 103 96 94" stroke-width="2.6" />
+            <path d="M104 94 Q113 103 122 93" stroke-width="2.6" />
+            <!-- tilak -->
+            <circle cx="100" cy="80" r="3" fill="currentColor" stroke="none" />
+            <circle cx="100" cy="90" r="2.3" fill="currentColor" stroke="none" />
+            <circle cx="100" cy="99" r="2.3" fill="currentColor" stroke="none" />
+            <!-- trunk: the dominant S, curling in at the base -->
+            <path d="M100 118 C96 138 78 146 72 160 C66 175 82 188 100 182 C118 176 120 156 104 152 C92 149 86 160 94 166" stroke-width="4.6" />
+            <!-- arms -->
+            <path d="M72 118 C56 126 46 140 50 154" stroke-width="2.8" />
+            <path d="M128 118 C144 126 154 140 150 154" stroke-width="2.8" />
+            <!-- lotus flame in the left hand, modak in the right -->
+            <path d="M48 122 C34 138 38 158 48 161 C58 158 62 138 48 122Z" stroke-width="2.6" />
+            <path d="M146 130 C162 124 172 136 165 150 C160 160 147 160 145 149" stroke-width="2.6" />
+            <!-- padmasana -->
+            <path d="M78 158 C56 160 36 170 34 183 C32 197 50 201 66 193 C79 187 89 185 100 185" stroke-width="3.4" />
+            <path d="M122 158 C144 160 164 170 166 183 C168 197 150 201 134 193 C121 187 111 185 100 185" stroke-width="3.4" />
+            <path d="M85 186 C85 178 115 178 115 186 C115 194 85 194 85 186Z" stroke-width="2.6" />
+          </svg>
+          <p class="shlok" lang="hi">
+            वक्रतुंड महाकाय सूर्यकोटि समप्रभ।<br />निर्विघ्नं कुरु मे देव
+            सर्वकार्येषु सर्वदा॥
+          </p>
+        </div>
         <div class="eyebrow">
           <span lang="hi">शुभ विवाह</span> · An invitation to celebrate
         </div>
@@ -2143,6 +2269,10 @@
             <p class="desc">
               Check in, switch off reality &amp; let the celebrations begin.
             </p>
+            <div class="dress">
+              <span class="dress-label">Dress code</span>
+              <span class="dress-text">Resort casual — travel comfy, you’ll be checking in</span>
+            </div>
             <div class="tag">#SwagatHaiIsJashnMein</div>
           </article>
           <article class="event">
@@ -2161,6 +2291,10 @@
             <p class="desc">
               An afternoon of blessings, love, laughter &amp; family traditions.
             </p>
+            <div class="dress">
+              <span class="dress-label">Dress code</span>
+              <span class="dress-text">Traditional Indian — pastels, florals &amp; soft pinks</span>
+            </div>
             <div class="tag">#MayraWaliMohabbat</div>
           </article>
           <article class="event">
@@ -2180,6 +2314,10 @@
               Filmy beats, dramatic performances &amp; absolutely zero sitting
               down.
             </p>
+            <div class="dress">
+              <span class="dress-label">Dress code</span>
+              <span class="dress-text">Bollywood glam — sequins, black tie, dancing shoes</span>
+            </div>
             <div class="tag">#NachoFilmyStyle</div>
           </article>
           <article class="event">
@@ -2199,6 +2337,10 @@
               Haldi, colours, games &amp; carnival chaos — come ready to get
               messy.
             </p>
+            <div class="dress">
+              <span class="dress-label">Dress code</span>
+              <span class="dress-text">Carnival bright — playful prints, sequins &amp; circus flair</span>
+            </div>
             <div class="tag">#RangBarseShaadiWale</div>
           </article>
           <article class="event">
@@ -2217,6 +2359,10 @@
             <p class="desc">
               The ultimate procession to the biggest ‘I do’ of the weekend.
             </p>
+            <div class="dress">
+              <span class="dress-label">Dress code</span>
+              <span class="dress-text">Festive Indian — sherwanis, lehengas &amp; full josh</span>
+            </div>
             <div class="tag">#BarathisOnTheMove</div>
           </article>
           <article class="event">
@@ -2237,6 +2383,10 @@
             <p class="desc">
               Good food, great music &amp; one very happily married couple.
             </p>
+            <div class="dress">
+              <span class="dress-label">Dress code</span>
+              <span class="dress-text">Indo-western formal — your best evening look</span>
+            </div>
             <div class="tag">#AndTheyDancedEverAfter</div>
           </article>
         </div>
@@ -2574,7 +2724,10 @@
             musicLabel.textContent = "Music on ♫";
             disarmGesture();
           })
-          .catch(() => {});
+          .catch(() => {
+            musicBtn.classList.remove("playing");
+            musicLabel.textContent = "Play music";
+          });
       }
       function stopMusic() {
         musicOff = true;
@@ -2599,6 +2752,30 @@
         if (music.paused) startMusic(); // startMusic disarms once it succeeds
       }
       GESTURES.forEach((ev) => window.addEventListener(ev, firstGesture, true));
+      // Hush when the guest leaves — another tab, another window, another app, a locked
+      // phone — and pick the song back up when they return. pausedAway is kept separate
+      // from musicOff so an automatic pause is never mistaken for "they switched it off".
+      let pausedAway = false;
+      function musicAway() {
+        if (!music.paused) {
+          music.pause();
+          pausedAway = true;
+        }
+      }
+      function musicBack() {
+        if (pausedAway && !musicOff) {
+          pausedAway = false;
+          startMusic();
+        }
+      }
+      // visibilitychange covers tab switches, app switches and screen lock;
+      // blur/focus additionally covers another window taking over on desktop.
+      document.addEventListener("visibilitychange", () =>
+        document.hidden ? musicAway() : musicBack()
+      );
+      window.addEventListener("blur", musicAway);
+      window.addEventListener("focus", musicBack);
+      window.addEventListener("pagehide", musicAway);
       const track = document.getElementById("eventTrack"),
         cards = [...document.querySelectorAll(".event")],
         dots = document.getElementById("eventDots");
