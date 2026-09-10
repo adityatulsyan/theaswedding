@@ -1279,18 +1279,21 @@
         margin-right: 3px;
       }
       .section-divider {
-        height: 1px;
+        height: 50px;
         position: relative;
         z-index: 2;
         display: grid;
         place-items: center;
-        background: linear-gradient(
+        background-image: linear-gradient(
           90deg,
           transparent 6%,
           rgba(215, 178, 93, 0.48) 28%,
           rgba(215, 178, 93, 0.48) 72%,
           transparent 94%
         );
+        background-size: 100% 1px;
+        background-position: center;
+        background-repeat: no-repeat;
       }
       .section-divider span {
         display: grid;
@@ -1484,6 +1487,9 @@
         .section-divider span {
           width: 34px;
           height: 34px;
+        }
+        .section-divider {
+          height: 44px;
         }
       }
       /* Keep the complete itinerary carousel in a standard mobile viewport. */
@@ -1803,7 +1809,7 @@
         min-height: 100svh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: safe center;
         padding-top: 40px;
         padding-bottom: 40px;
         scroll-margin-top: 0;
@@ -1830,7 +1836,7 @@
 
       @media (max-width: 700px) {
         .event-art {
-          aspect-ratio: 6/5;
+          aspect-ratio: 1/1;
           object-fit: cover;
         }
         .event .when,
@@ -1840,8 +1846,8 @@
           min-height: auto;
         }
         .itinerary {
-          padding-top: 10px;
-          padding-bottom: 10px;
+          padding-top: 14px;
+          padding-bottom: 14px;
         }
         .itinerary > .center .lead {
           display: none;
@@ -1891,8 +1897,8 @@
       }
       @media (min-width: 701px) {
         .itinerary {
-          padding-top: 16px;
-          padding-bottom: 16px;
+          padding-top: 20px;
+          padding-bottom: 20px;
         }
         .itinerary h2 {
           font: 500 clamp(38px, 4.4vw, 56px) / 1 "Cormorant Garamond", serif;
@@ -2018,36 +2024,6 @@
         .shlok {
           font-size: 13px;
           line-height: 1.95;
-        }
-      }
-      /* Dress code per function — the one thing every guest messages to ask about. */
-      .dress {
-        margin: 7px 5px 0;
-        padding-top: 8px;
-        border-top: 1px solid rgba(215, 178, 93, 0.45);
-      }
-      .dress-label {
-        display: block;
-        font-size: 9.5px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--red);
-        font-weight: 700;
-      }
-      .dress-text {
-        display: block;
-        margin-top: 3px;
-        font: 500 15px/1.35 "Cormorant Garamond", serif;
-        color: var(--ink);
-      }
-      @media (max-width: 700px) {
-        .dress {
-          margin-top: 6px;
-          padding-top: 6px;
-        }
-        .dress-text {
-          font-size: 14.5px;
-          line-height: 1.3;
         }
       }
 </style>
@@ -2269,10 +2245,6 @@
             <p class="desc">
               Check in, switch off reality &amp; let the celebrations begin.
             </p>
-            <div class="dress">
-              <span class="dress-label">Dress code</span>
-              <span class="dress-text">Resort casual — travel comfy, you’ll be checking in</span>
-            </div>
             <div class="tag">#SwagatHaiIsJashnMein</div>
           </article>
           <article class="event">
@@ -2291,10 +2263,6 @@
             <p class="desc">
               An afternoon of blessings, love, laughter &amp; family traditions.
             </p>
-            <div class="dress">
-              <span class="dress-label">Dress code</span>
-              <span class="dress-text">Traditional Indian — pastels, florals &amp; soft pinks</span>
-            </div>
             <div class="tag">#MayraWaliMohabbat</div>
           </article>
           <article class="event">
@@ -2314,10 +2282,6 @@
               Filmy beats, dramatic performances &amp; absolutely zero sitting
               down.
             </p>
-            <div class="dress">
-              <span class="dress-label">Dress code</span>
-              <span class="dress-text">Bollywood glam — sequins, black tie, dancing shoes</span>
-            </div>
             <div class="tag">#NachoFilmyStyle</div>
           </article>
           <article class="event">
@@ -2337,10 +2301,6 @@
               Haldi, colours, games &amp; carnival chaos — come ready to get
               messy.
             </p>
-            <div class="dress">
-              <span class="dress-label">Dress code</span>
-              <span class="dress-text">Carnival bright — playful prints, sequins &amp; circus flair</span>
-            </div>
             <div class="tag">#RangBarseShaadiWale</div>
           </article>
           <article class="event">
@@ -2359,10 +2319,6 @@
             <p class="desc">
               The ultimate procession to the biggest ‘I do’ of the weekend.
             </p>
-            <div class="dress">
-              <span class="dress-label">Dress code</span>
-              <span class="dress-text">Festive Indian — sherwanis, lehengas &amp; full josh</span>
-            </div>
             <div class="tag">#BarathisOnTheMove</div>
           </article>
           <article class="event">
@@ -2383,10 +2339,6 @@
             <p class="desc">
               Good food, great music &amp; one very happily married couple.
             </p>
-            <div class="dress">
-              <span class="dress-label">Dress code</span>
-              <span class="dress-text">Indo-western formal — your best evening look</span>
-            </div>
             <div class="tag">#AndTheyDancedEverAfter</div>
           </article>
         </div>
