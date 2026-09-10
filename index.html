@@ -1807,6 +1807,7 @@
    centred, the carousel controls and Save-the-dates below — no scrolling within it. ── */
       .itinerary {
         min-height: 100svh;
+        max-height: 100svh;
         display: flex;
         flex-direction: column;
         justify-content: safe center;
@@ -2024,6 +2025,82 @@
         .shlok {
           font-size: 13px;
           line-height: 1.95;
+        }
+      }
+      /* Fit the whole itinerary on one screen, down to short phones. The divider now
+         reserves its own height, so this section no longer needs padding to keep the
+         badge off its heading — that budget goes back into fitting the card. */
+      @media (max-width: 700px) {
+        .itinerary {
+          padding-top: 6px;
+          padding-bottom: 6px;
+        }
+        .itinerary h2 {
+          font-size: 34px;
+          margin: 2px 0 2px;
+        }
+        .event-track-wrap {
+          margin-top: 4px;
+        }
+        .event-track {
+          padding-top: 2px;
+          padding-bottom: 6px;
+        }
+        .carousel-nav {
+          margin-top: 0;
+        }
+        /* Square by default, but never taller than the screen can spare — so the card
+           still fits whole on a short phone instead of pushing the arrows off-screen. */
+        .event-art {
+          max-height: 57svh;
+        }
+      }
+      /* Let the card absorb the screen instead of leaving centred dead space above and
+         below it: the track grows to fill whatever the heading and arrows don't use, and
+         the artwork takes the remainder. No magic svh numbers, and it fills any screen. */
+      .itinerary > .center {
+        flex: 0 0 auto;
+      }
+      .event-track-wrap {
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .event-track {
+        flex: 1 1 auto;
+        min-height: 0;
+      }
+      .carousel-nav,
+      .swipe-note {
+        flex: 0 0 auto;
+      }
+      .event {
+        min-height: 0;
+      }
+      .event-art {
+        flex: 1 1 auto;
+        min-height: 90px;
+        aspect-ratio: auto;
+        max-height: none;
+        height: auto;
+        object-fit: cover;
+      }
+
+      /* Very short screens (an iPhone SE is ~553px of usable height): shrink the art
+         further and drop the decorative quote so the card still fits whole. */
+      @media (max-width: 700px) and (max-height: 640px) {
+        .event-art {
+          max-height: 44svh;
+        }
+        .event .quote {
+          display: none;
+        }
+        .itinerary h2 {
+          font-size: 29px;
+        }
+        .itinerary .kicker {
+          font-size: 10px;
         }
       }
 </style>
